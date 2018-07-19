@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function() {
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
@@ -61,13 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 self.removeCard();
             }
         });
-    }
+    };
 
     Card.prototype = {
         removeCard: function() {
             this.element.parentNode.removeChild(this.element);
         }
-    }
+    };
 
     var board = {
         name: 'Kanban Board',
@@ -84,28 +86,23 @@ document.addEventListener('DOMContentLoaded', function() {
             group: 'kanban',
             sort: true
         });
-    }
+    };
 
     document.querySelector('#board .create-column').addEventListener('click', function() {
 
         var name = prompt('Enter a column name');
-        if (isNaN(name) || name === '' || name === null) {
-
-        }
-        else{
         var column = new Column(name);
         board.addColumn(column);
-    }
     });
 
     // CREATING COLUMNS
     var todoColumn = new Column('To do');
-    var inprogressColumn = new Column('In progress');
+    var doingColumn = new Column('In progress');
     var doneColumn = new Column('Done');
 
     // ADDING COLUMNS TO THE BOARD
     board.addColumn(todoColumn);
-    board.addColumn(inprogressColumn);
+    board.addColumn(doingColumn);
     board.addColumn(doneColumn);
 
     // CREATING CARDS
@@ -114,8 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ADDING CARDS TO COLUMNS
     todoColumn.addCard(card1);
-    inprogressColumn.addCard(card2);
-
-
+    doingColumn.addCard(card2);
 
 });
