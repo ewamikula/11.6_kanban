@@ -1,0 +1,37 @@
+/*global*/
+* { box-sizing: border-box; }
+
+/*fonts and colors*/
+/*mixins*/
+body { margin: 0; font-family: "Open Sans", sans-serif; background: url("https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); }
+
+/*board*/
+.board { width: 100%; max-width: 1200px; margin: 50px; padding: auto; height: 100vh; background: rgba(45, 52, 54, 0.5); border-radius: 15px; }
+
+.board h1 { margin-left: 10px; font-family: "Poppins", sans-serif; color: #fff; font-size: 70px; }
+
+.board .create-column { border-radius: 10px; margin: 20px; text-align: center; width: 200px; height: 50px; font-size: 20px; background: #e74c3c; color: #fff; transition: 0.3s; }
+
+.board .create-column:hover { background: #fff; color: #e74c3c; }
+
+.board .column-container { padding: 30px; }
+
+.board .column-container .column { float: left; padding: 20px; margin: 10px; border-radius: 10px; background: #e74c3c; width: 300px; min-height: 300px; border-radius: 10px; }
+
+.board .column-container .column h2 { color: #fff; font-size: 30px; }
+
+.board .column-container .column ul { color: #fff; font-size: 20px; }
+
+.board .column-container .column .btn-delete { border-radius: 2px; width: 25px; height: 25px; background: #e74c3c; color: #fff; transition: 0.3s; }
+
+.board .column-container .column .btn-delete:hover { background: #fff; color: #e74c3c; }
+
+.board .column-container .column .add-card { border-radius: 2px; width: 100px; height: 25px; background: #e74c3c; color: #fff; transition: 0.3s; }
+
+.board .column-container .column .add-card:hover { background: #fff; color: #e74c3c; }
+
+.board .column-container .card p { color: #fff; font-size: 15px; }
+
+.board .column-container .card .btn-delete { border-radius: 2px; width: 25px; height: 25px; background: #e74c3c; color: #fff; transition: 0.3s; }
+
+.board .column-container .card .btn-delete:hover { background: #fff; color: #e74c3c; }

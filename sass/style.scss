@@ -1,0 +1,131 @@
+/*global*/
+* {
+    box-sizing: border-box;
+}
+/*fonts and colors*/
+
+$font: 'Open Sans', sans-serif;
+$font-special: 'Poppins', sans-serif;
+$background: rgba(22, 160, 133,1.0);
+$column: rgba(231, 76, 60, 1.0);
+$white: #fff;
+$text: #2d3436;
+$button: rgba(231, 76, 60,1.0);
+$board: rgba(45, 52, 54, 0.5);
+
+/*mixins*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin width($width, $max-width) {
+  width: $width;
+  max-width: $max-width;
+}
+@mixin margin-padding ($margin, $padding) {
+	margin: $margin;
+	padding: $padding;
+}
+
+body {
+	margin: 0;
+	font-family: $font;
+	background: url('https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+/*board*/
+.board {
+	@include width(100%, 1200px);
+	@include margin-padding(50px, auto);
+	height: 100vh;
+	background: $board;
+	@include border-radius(15px);
+	h1 {
+		margin-left: 10px;
+		font-family: $font-special;
+		color: $white;
+		font-size: 70px;
+	}
+	.create-column {
+		@include border-radius(10px);
+		margin: 20px;
+		text-align: center;
+		width: 200px;
+		height: 50px;
+		font-size: 20px;
+		background: $button;
+		color: $white;
+		transition: 0.3s;
+		&:hover {
+			background: $white;
+			color: $button;
+		}
+	}
+	.column-container {
+		padding: 30px;
+		.column {
+			float: left;
+			padding: 20px;
+			margin: 10px;
+			@include border-radius(10px);
+			background: $column;
+			width: 300px;
+			min-height: 300px;
+			@include border-radius(10px);
+			h2 {
+				color: $white;
+				font-size: 30px;
+			}
+			ul {
+				color: $white;
+				font-size: 20px;
+			}
+			.btn-delete {
+				@include border-radius(2px);
+				width: 25px;
+				height: 25px;
+				background: $button;
+				color: $white;
+				transition: 0.3s;
+				&:hover {
+					background: $white;
+					color: $button;
+				}
+			}
+			.add-card {
+				@include border-radius(2px);
+				width: 100px;
+				height: 25px;
+				background: $button;
+				color: $white;
+				transition: 0.3s;
+				&:hover {
+					background: $white;
+					color: $button;
+				}
+			}
+		}
+		.card {
+			p {
+				color: $white;
+				font-size: 15px;
+			}
+			.btn-delete {
+				@include border-radius(2px);
+				width: 25px;
+				height: 25px;
+				background: $button;
+				color: $white;
+				transition: 0.3s;
+				&:hover {
+					background: $white;
+					color: $button;
+				}
+
+			}
+		}
+	}
+
+}
