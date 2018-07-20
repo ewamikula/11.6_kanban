@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // CREATING COLUMNS
     var todoColumn = new Column('To do');
-    var doingColumn = new Column('In progress');
+    var doingColumn = new Column('Doing');
     var doneColumn = new Column('Done');
 
     // ADDING COLUMNS TO THE BOARD
