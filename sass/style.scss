@@ -13,6 +13,7 @@ $text: #2d3436;
 $button: rgba(231, 76, 60,1.0);
 $board: rgba(45, 52, 54, 0.5);
 $add: #00b894;
+$cardh: #00cec9;
 
 /*mixins*/
 
@@ -39,10 +40,10 @@ body {
 /*board*/
 .board {
 	@include width(100%, 1200px);
-	@include margin-padding(50px, auto);
-	height: 100vh;
+	margin: 0 auto;
+	height: 120vh;
 	background: $board;
-	padding: 20px;
+	padding: 10px;
 	@include border-radius(15px);
 	h1 {
 		margin-left: 20px;
@@ -53,7 +54,8 @@ body {
 	.create-column {
 		@include border-radius(10px);
 		padding: 10px;
-		margin: 10px;
+		border: $button;
+		margin-left: 20px;
 		text-align: center;
 		width: 150px;
 		height: 50px;
@@ -68,15 +70,15 @@ body {
 		}
 	}
 	.column-container {
-		padding: 30px;
+		padding: 5px;
 		.column {
 			float: left;
-			padding: 20px;
+			padding: 5px;
 			margin: 10px;
 			@include border-radius(10px);
 			background: $column;
-			width: 300px;
-			min-height: 300px;
+			width: 365px;
+			min-height: 365px;
 			@include border-radius(10px);
 			position: relative;
 			h2 {
@@ -89,8 +91,11 @@ body {
 				font-size: 20px;
 				list-style: none;
 			}
-			.btn-delete {
-				float: left;
+			.big {
+				position: absolute;
+				border: $button;
+				right: 15px;
+				bottom: 15px;
 				@include border-radius(5px);
 				width: 25px;
 				height: 25px;
@@ -104,6 +109,7 @@ body {
 				}
 			}
 			.add-card {
+				border: $add;
 				position: absolute;
 				right: 45px;
 				bottom: 15px;
@@ -116,23 +122,37 @@ body {
 				transition: 0.3s;
 				&:hover {
 					background: $white;
+					border: 2px solid $add;
 					color: $add;
 				}
 			}
 		}
 		.card {
+			@include border-radius(5px);
+			position: relative;
+			float: left;
+			background: $background;
+			padding: 5px;
+			margin: 2px;
+			max-width: 350px;
 			p {
-				color: $text;
-				background: $background;
+				padding: 3px;
+				color: $white;
 				font-size: 15px;
 			}
-			.btn-delete {
-				float: left;
-				@include border-radius(5px);
+			.small {
+				position: absolute;
+				top: 2px;
+				right: 2px;
 				width: 15px;
 				height: 15px;
-				border: $button;
 				color: $white;
+				border: $background;
+				background: inherit;
+				transition: 0.3s;
+				&:hover {
+					color: $button;
+				}
 			}
 		}
 	}

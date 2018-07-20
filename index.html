@@ -9,12 +9,13 @@
 <body>
 	<div id="board" class="board">
 	    <h1>Kanban board by Ewa</h1>
+	   	<button class="create-column">Add a column</button>
 	    <div class="column-container">
 	      <script id="column-template" type="x-tmpl-mustache">
 	      <div class="column">
 	        <h2 class="column-title">{{ name }}</h2>
 	        <ul id={{ id }} class="column-card-list"></ul>
-	        <button class="btn-delete">x</button>
+	        <button class="btn-delete big">x</button>
 	        <button class="add-card">+</button>
 	      </div>
 	      </script>
@@ -25,7 +26,6 @@
 	        </div
 	      </script>
 	    </div>
-	   	<button class="create-column">Add a column</button>
 	</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>

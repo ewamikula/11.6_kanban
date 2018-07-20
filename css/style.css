@@ -6,30 +6,34 @@
 body { margin: 0; font-family: "Open Sans", sans-serif; background: url("https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); }
 
 /*board*/
-.board { width: 100%; max-width: 1200px; margin: 50px; padding: auto; height: 100vh; background: rgba(45, 52, 54, 0.5); padding: 20px; border-radius: 15px; }
+.board { width: 100%; max-width: 1200px; margin: 0 auto; height: 120vh; background: rgba(45, 52, 54, 0.5); padding: 10px; border-radius: 15px; }
 
 .board h1 { margin-left: 20px; font-family: "Poppins", sans-serif; color: #fff; font-size: 70px; }
 
-.board .create-column { border-radius: 10px; padding: 10px; margin: 10px; text-align: center; width: 150px; height: 50px; font-size: 20px; background: #e74c3c; color: #fff; transition: 0.3s; }
+.board .create-column { border-radius: 10px; padding: 10px; border: #e74c3c; margin-left: 20px; text-align: center; width: 150px; height: 50px; font-size: 20px; background: #e74c3c; color: #fff; transition: 0.3s; }
 
 .board .create-column:hover { background: #fff; border: 2px solid #e74c3c; color: #e74c3c; }
 
-.board .column-container { padding: 30px; }
+.board .column-container { padding: 5px; }
 
-.board .column-container .column { float: left; padding: 20px; margin: 10px; border-radius: 10px; background: #fff; width: 300px; min-height: 300px; border-radius: 10px; position: relative; }
+.board .column-container .column { float: left; padding: 5px; margin: 10px; border-radius: 10px; background: #fff; width: 365px; min-height: 365px; border-radius: 10px; position: relative; }
 
 .board .column-container .column h2 { color: #2d3436; font-size: 30px; text-align: center; }
 
 .board .column-container .column ul { color: #2d3436; font-size: 20px; list-style: none; }
 
-.board .column-container .column .btn-delete { float: left; border-radius: 5px; width: 25px; height: 25px; background: #e74c3c; color: #fff; transition: 0.3s; }
+.board .column-container .column .big { position: absolute; border: #e74c3c; right: 15px; bottom: 15px; border-radius: 5px; width: 25px; height: 25px; background: #e74c3c; color: #fff; transition: 0.3s; }
 
-.board .column-container .column .btn-delete:hover { background: #fff; border: 2px solid #e74c3c; color: #e74c3c; }
+.board .column-container .column .big:hover { background: #fff; border: 2px solid #e74c3c; color: #e74c3c; }
 
-.board .column-container .column .add-card { position: absolute; right: 45px; bottom: 15px; float: right; border-radius: 5px; width: 25px; height: 25px; background: #00b894; color: #fff; transition: 0.3s; }
+.board .column-container .column .add-card { border: #00b894; position: absolute; right: 45px; bottom: 15px; float: right; border-radius: 5px; width: 25px; height: 25px; background: #00b894; color: #fff; transition: 0.3s; }
 
-.board .column-container .column .add-card:hover { background: #fff; color: #00b894; }
+.board .column-container .column .add-card:hover { background: #fff; border: 2px solid #00b894; color: #00b894; }
 
-.board .column-container .card p { color: #2d3436; background: #16a085; font-size: 15px; }
+.board .column-container .card { border-radius: 5px; position: relative; float: left; background: #16a085; padding: 5px; margin: 2px; max-width: 350px; }
 
-.board .column-container .card .btn-delete { float: left; border-radius: 5px; width: 15px; height: 15px; border: #e74c3c; color: #fff; }
+.board .column-container .card p { padding: 3px; color: #fff; font-size: 15px; }
+
+.board .column-container .card .small { position: absolute; top: 2px; right: 2px; width: 15px; height: 15px; color: #fff; border: #16a085; background: inherit; transition: 0.3s; }
+
+.board .column-container .card .small:hover { color: #e74c3c; }
