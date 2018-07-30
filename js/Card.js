@@ -13,6 +13,7 @@ function Card(id, name) {
     	}
   	});
 }
+Card.prototype = {
 removeCard: function() {
   var self = this;
 
@@ -23,4 +24,5 @@ removeCard: function() {
     .then(function(resp) {
       self.element.parentNode.removeChild(this.element);
     })
+  }
 }

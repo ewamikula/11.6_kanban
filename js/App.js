@@ -1,15 +1,3 @@
-// OGÓLNA FUNKCJA
-
-function generateTemplate(name, data, basicElement) {
-    var template = document.getElementById(name).innerHTML;
-    var element = document.createElement(basicElement || 'div');
-  
-    Mustache.parse(template);
-    element.innerHTML = Mustache.render(template, data);
-  
-    return element;
-}
-
 // API
 
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
@@ -39,4 +27,16 @@ function setupCards(col, cards) {
     var cardObj = new Card(card.id, card.name);
   	col.addCard(cardObj);
 	});
+}
+
+// OGÓLNA FUNKCJA
+
+function generateTemplate(name, data, basicElement) {
+    var template = document.getElementById(name).innerHTML;
+    var element = document.createElement(basicElement || 'div');
+  
+    Mustache.parse(template);
+    element.innerHTML = Mustache.render(template, data);
+  
+    return element;
 }

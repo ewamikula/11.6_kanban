@@ -22,14 +22,16 @@ function Column(id, name) {
     			headers: myHeaders,
     			body: data,
   			})
-  			.then(function(res) {
-   				return res.json();
+  			.then(function(resp) {
+   				return resp.json();
   			})
  			.then(function(resp) {
     			var card = new Card(resp.id, cardName);
     			self.addCard(card);
   			});
- 		}
+
+  			self.addCard(new Card (cardName));
+ 		};
  	});
 } 	
 
@@ -48,7 +50,3 @@ Column.prototype = {
    	 });
 	}
 };
-
-
-
-
