@@ -1,21 +1,9 @@
-// OGÓLNA FUNKCJA
-
-function generateTemplate(name, data, basicElement) {
-  	var template = document.getElementById(name).innerHTML;
-  	var element = document.createElement(basicElement || 'div');
-  
-  	Mustache.parse(template);
-  	element.innerHTML = Mustache.render(template, data);
-  
-  	return element;
-}
-
 // API
 
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
-  'X-Client-Id': 'X-Client-Id',
-  'X-Auth-Token': 'X-Auth-Token',
+  'X-Client-Id': '3427',
+  'X-Auth-Token': '78db04eea4350bb1fb507ec7efea45ea',
   'Content-Type': 'application/json; charset=utf-8'
 };
 
@@ -30,8 +18,8 @@ fetch(baseUrl + '/board', { headers: myHeaders })
 function setupColumns(columns) {
   columns.forEach(function (column) {
 		var col = new Column(column.id, column.name);
-    board.addColumn(col);
-    setupCards(col, column.cards);
+    	board.addColumn(col);
+    	setupCards(col, column.cards);
   });
 }
 
@@ -40,4 +28,16 @@ function setupCards(col, cards) {
     var cardObj = new Card(card.id, card.name);
   	col.addCard(cardObj);
 	});
+}
+
+// OGÓLNA FUNKCJA
+
+function generateTemplate(name, data, basicElement) {
+  	var template = document.getElementById(name).innerHTML;
+  	var element = document.createElement(basicElement || 'div');
+  
+  	Mustache.parse(template);
+  	element.innerHTML = Mustache.render(template, data);
+  
+  	return element;
 }
